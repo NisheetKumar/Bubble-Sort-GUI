@@ -38,13 +38,19 @@ class Bubble_Sort:
 		except: pass
 
 	def Orange(self,n):
-		self.array_list[n].config(bg="#FDCB7F")
-
-	def Blue(self,n):
-		self.array_list[n].config(bg="#7FEDFD")
+		try:
+			self.array_list[n].config(bg="#FDCB7F")
+		except: pass
 	
+	def Blue(self,n):
+		try:
+			self.array_list[n].config(bg="#7FEDFD")
+		except: pass
+
 	def Green(self,n):
-		self.array_list[n].config(bg="#BEFD7F")
+		try:
+			self.array_list[n].config(bg="#BEFD7F")
+		except: pass
 
 	def File_edit(self):
 		file = open("Recored.txt",'r+')
@@ -95,6 +101,12 @@ class Bubble_Sort:
 
 
 	def PlayBubbleSort(self):
+		try:
+			self.start_b.destroy()
+			self.end_b.destroy()
+			self.next_b.destroy()
+			self.previous_b.destroy()
+		except: pass
 		print("PBS",self.running)
 		if not self.running:
 			self.running = True
@@ -138,6 +150,8 @@ class Bubble_Sort:
 	
 	def stop_(self):
 		self.stop = True
+		self.running = False
+		self.value.clear()
 		NList = self.create_value_list()
 		for i in range(len(NList)):
 			for j in range(len(NList)-i-1):
@@ -153,6 +167,7 @@ class Bubble_Sort:
 
 	def clear_value(self):
 		self.value.clear()
+		self.stop = False
 		self.running = False
 		for i in self.array_list:
 			i.delete(0,tk.END)
@@ -181,6 +196,12 @@ class Bubble_Sort:
 		except: pass	
 
 	def Genrate_array(self,n):
+		try:
+			self.play_sorted_b.destroy()
+			self.clear_b.destroy()
+			self.sorted_b.destroy()
+		except: pass	
+
 		box_frame = tk.Frame(self.masterr)
 		box_frame.place(x=5,y=50)
 		self.array_list.clear()
