@@ -201,6 +201,8 @@ class Bubble_Sort:
 			self.clear_b.destroy()
 			self.sorted_b.destroy()
 		except: pass	
+		
+		self.delete_boxs()
 
 		box_frame = tk.Frame(self.masterr)
 		box_frame.place(x=5,y=50)
@@ -208,7 +210,7 @@ class Bubble_Sort:
 		self.value.clear()
 		self.index_list.clear()
 
-		self.delete_boxs()
+		
 
 		h = 200
 		w = 0
